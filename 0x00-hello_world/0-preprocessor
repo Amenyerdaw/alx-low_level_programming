@@ -1,9 +1,9 @@
 #!/bin/bash
-gcc $CFILE -E -o c
+gcc $CFILE -E -0 C
 
 #include <stdio.h>
 
-int main(void)
+int main (void)
 {
 	printf("Hello World\n');
 	return(0);
