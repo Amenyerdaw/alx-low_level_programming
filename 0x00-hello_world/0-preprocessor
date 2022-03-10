@@ -1,10 +1,2 @@
 #!/bin/bash
-gcc $CFILE -S -o c
-
-#include <stdio.h>:
-int main(void)
-{
-	printf("Hello World\n");
-	return(0);
-}
-
+gcc -E $CFILE -0 c
