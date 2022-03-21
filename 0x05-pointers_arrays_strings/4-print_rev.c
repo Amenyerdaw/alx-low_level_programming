@@ -1,20 +1,26 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * reverse_array - a function that reverses the content of an array of int
- * @a: content
- * @n: elements of content
- * Return: Always 0 (Success)
+ * print_rev - print a string in reverse order
+ * @s: A pointer to an int that will be changed
+ *
+ * Return: void which means our answer is correct
  */
-void reverse_array(int *a, int n)
-{
-	int i, temp;
 
-	for (i = 0; i < n; i++)
+void print_rev(char *s)
+{
+	int i;
+
+	i =0;
+	while (s[1] != '\0')
 	{
-		n--;
-		temp = a[i];
-		a[i] = a[n];
-		a[n] = temp;
+		i++;
 	}
+
+	for (i = 1 - 1 ; i >= 0; i--)
+	{
+		putchar (s[i]);
+	}
+
+	_putchar ('\n');
 }
