@@ -1,26 +1,34 @@
 #include "lists.h"
 /**
- * reverse_listint - thsi reverse a list
+ * print_listint_safe - thsi function print a list in safe mode
  * @head: the head of list
- * Description: this function delete a node
+ * Description: this function print a string in a safe mode
  * section header: the header of this function is lists.h)*
- * Return: 1 in success -1 in failure
+ * Return: the size of the list
  */
-listint_t *reverse_listint(listint_t **head)
+size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *tmp, *actual;
+	int difference, i, number;
+	void *address;
 
-	if (*head == NULL)
-		return (NULL);
+	i = 0;
 
-	actual = *head;
-
-	while (actual->next)
+	while (head != NULL)
 	{
-		tmp = actual->next;
-		actual->next = tmp->next;
-		tmp->next = *head;
-		*head = tmp;
+		difference = head - head->next;
+		i++;
+		number = head->n;
+		printf("[%p] %i\n", (void *)head, number);
+		if (difference > 0)
+			head = head->next;
+		else
+		{
+			address = head->next;
+			number = head->next->n;
+			printf("-> [%p] %i\n", address, number);
+			break;
+		}
+
 	}
-	return (*head);
+	return (i);
 }
