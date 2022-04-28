@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 /**
  * get_endianness - get the endiannes of the arch
  * Description: get the endiannes of the arch
